@@ -115,7 +115,7 @@ onecloud_rootfs() {
 }
 
 cumebox2_rootfs() {
-    cp $SRCPATH/image/cumebox2/Armbian_25.2.2_Khadas-vim1_bookworm_current_6.12.17_minimal.img $SRCPATH/tmp/rootfs.img
+    cp ./Armbian_25.2.2_Khadas-vim1_bookworm_current_6.12.17_minimal.img $SRCPATH/tmp/rootfs.img
     sudo parted -s $SRCPATH/tmp/rootfs.img resizepart 1 100% || exit -1
     sudo losetup --offset $((8192*512)) $LOOPDEV $SRCPATH/tmp/rootfs.img  || exit -1
     sudo e2fsck -f $LOOPDEV && sudo resize2fs $LOOPDEV

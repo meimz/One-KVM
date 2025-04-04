@@ -17,6 +17,12 @@ jobs:
       #新建一个名为checkout_actions的步骤
       - name: checkout_actions
         uses: actions/checkout@v3
+      - name: download image
+        run:
+          wget -o a.xz https://mirror.twds.com.tw/armbian-dl/khadas-vim1/archive/Armbian_25.2.2_Khadas-vim1_bookworm_current_6.12.17_minimal.img.xz
+      - name: xz -d
+        run:
+          xz -d a.xz
       - name: ls
         run:
           chmod -R 777 ./build/
