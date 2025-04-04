@@ -20,5 +20,6 @@ jobs:
         uses: actions/checkout@v3
       - name: commit push
         #执行执行某个shell命令或脚本
-        run: |
+        run:
+          ls
           ./build/build_img.sh cumebox2
